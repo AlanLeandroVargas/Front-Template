@@ -1,8 +1,12 @@
 import express, { Application, Request, Response } from 'express';
 import path from 'path';
+import cors from 'cors';
 import axios from 'axios';
 
 const app: Application = express();
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
