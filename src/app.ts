@@ -4,11 +4,12 @@ import axios from 'axios';
 
 const app: Application = express();
 
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 
 // Serve the home page
 app.get('/', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile(path.join(__dirname, '../public/pages/index.html'));
 });
 
 // Route to communicate with the example microservice
